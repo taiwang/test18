@@ -1,0 +1,205 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width">
+
+<title>  iphone </title>
+
+
+<style>
+#stage{
+  perspective: 800px;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #3a89b7;
+  font-size: 100%;
+}
+.scene, .shape, .face, .face-wrapper, .cr {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+.scene {
+  width: 80em;
+  height: 80em;
+  top: 50%;
+  left: 50%;
+  margin: -40em 0 0 -40em;
+}
+.shape {
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-origin: 50%;
+}
+.face, .face-wrapper {
+  overflow: hidden;
+  transform-origin: 0 0;
+  backface-visibility: hidden;
+  /* hidden by default, prevent blinking and other weird rendering glitchs */
+}
+.face {
+  background-size: 100% 100%!important;
+  background-position: center;
+}
+.face-wrapper .face {
+  left: 100%;
+  width: 100%;
+  height: 100%
+}
+.photon-shader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%
+}
+.side {
+  left: 50%;
+}
+.cr, .cr .side {
+  height: 100%;
+}
+[class*="cuboid"] .ft, [class*="cuboid"] .bk {
+  width: 100%;
+  height: 100%;
+}
+[class*="cuboid"] .bk {
+  left: 100%;
+}
+[class*="cuboid"] .rt {
+  transform: rotateY(-90deg) translateX(-50%);
+}
+[class*="cuboid"] .lt {
+  transform: rotateY(90deg) translateX(-50%);
+}
+[class*="cuboid"] .tp {
+  transform: rotateX(90deg) translateY(-50%);
+}
+[class*="cuboid"] .bm {
+  transform: rotateX(-90deg) translateY(-50%);
+}
+[class*="cuboid"] .lt {
+  left: 100%;
+}
+[class*="cuboid"] .bm {
+  top: 100%;
+}
+/* .top styles */
+.top {
+  transform:translate3D(0em, -1.1em, 0em) rotateX(0deg) rotateY(-90deg) rotateZ(0deg);
+  opacity:1;
+  width:16em;
+  height:.45em;
+  margin:-0.225em 0 0 -8em;
+}
+.top .ft {
+  transform:translateZ(16em);
+}
+.top .bk {
+  transform:translateZ(-16em) rotateY(180deg);
+}
+.top .rt, .top .lt {
+  width:32em;
+  height:.45em;
+}
+.top .tp, .top .bm {
+  width:16em;
+  height:32em;
+}
+.top .face {
+  background-color:#303030;
+}
+.top .tp {
+  background:url(top.png);
+}
+.top .ft {
+  width:11em;
+  margin-left:2.5em;
+}
+.top .bk {
+  width:11em;
+  margin-left:-2.5em;
+}
+.top .rt, .top .lt {
+  width:27em;
+}
+.top .tp, .top .bm, .top .tp .photon-shader, .top .bm .photon-shader {
+  border-radius:2.5em;
+}
+
+}
+.top .side {
+  width:0.8169222016226814em;
+}
+
+#buttons {
+position:absolute;
+bottom:5.5em;
+left:1em
+}
+
+button {
+  background-color: #4CAF50;
+  color:black;
+}
+
+video {
+position:absolute;
+left:1em;
+top:5em;
+
+}
+</style>
+<body>
+<div id="stage">
+  <div class="scene" style="-webkit-transform:rotateX(-45deg) rotateY(-45deg); -moz-transform:rotateX(-45deg) rotateY(-45deg); -ms-transform:rotateX(-45deg) rotateY(-45deg); transform:rotateX(-45deg) rotateY(-45deg); ">
+    <div class="shape cuboid-3 top">
+      <div class="face ft">
+        <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.098);"></div>
+      </div>
+      <div class="face bk">
+        <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.098);"></div>
+      </div>
+      <div class="face rt">
+        <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.098);"></div>
+      </div>
+      <div class="face lt">
+        <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.098);"></div>
+      </div>
+      <div class="face bm">
+        <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.098);"></div>
+      </div>
+      <div class="face tp">
+
+
+        <video id="myVideo" width="170" autoplay >
+  	<source src="TNTV Xmas.mp4" type="video/mp4">
+	</video>
+
+	<div  id=buttons>
+        <button onclick="playVid()" type="button">Play</button>
+	<button onclick="pauseVid()" type="button">Pause</button>
+	</div>
+       </div>
+        </div>
+        </div>
+
+
+ 	<script> 
+	var vid = document.getElementById("myVideo"); 
+
+	function playVid() { 
+  	vid.play(); 
+	} 
+	function pauseVid() { 
+  	vid.pause();
+	}
+	</script> 
+
+
+     
+</body>
+</html>
