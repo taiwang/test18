@@ -144,9 +144,21 @@ video {
 position:absolute;
 left:1em;
 top:5em;
- z-index: -1;
+
 }
 </style>
+	<script> 
+	var vid = document.getElementById("myVideo"); 
+
+	function playVid() { 
+  	vid.play(); 
+	} 
+
+	function pauseVid() { 
+  	vid.pause(); 
+	} 
+	</script> 
+	</head>
 <body>
 <div id="tridiv">
   <div class="scene" style="-webkit-transform:rotateX(-45deg) rotateY(-45deg); -moz-transform:rotateX(-45deg) rotateY(-45deg); -ms-transform:rotateX(-45deg) rotateY(-45deg); transform:rotateX(-45deg) rotateY(-45deg); ">
@@ -176,17 +188,7 @@ top:5em;
 	<button onclick="pauseVid()" type="button">Pause</button>
 	</div>
 
-        <script> 
-	var vid = document.getElementById("myVideo"); 
-
-	function playVid() { 
-  	vid.play(); 
-	} 
-
-	function pauseVid() { 
-  	vid.pause(); 
-	} 
-	</script> 
+        
 	
       </div>
       
