@@ -172,9 +172,21 @@ video {
 position:absolute;
 left:1em;
 top:5em;
-z-index: -1;
+
 }
 </style>
+		<script> 
+	var vid = document.getElementById("myVideo"); 
+
+	function playVid() { 
+  	vid.play(); 
+	} 
+	function pauseVid() { 
+  	vid.pause();
+	}
+</script> 
+	
+</head>
 <body>
 <div id="stage">
   <div class="scene" style="-webkit-transform:rotateX(-45deg) rotateY(-45deg); -moz-transform:rotateX(-45deg) rotateY(-45deg); -ms-transform:rotateX(-45deg) rotateY(-45deg); transform:rotateX(-45deg) rotateY(-45deg); ">
@@ -210,16 +222,7 @@ z-index: -1;
         </div>
 
 
- 	<script> 
-	var vid = document.getElementById("myVideo"); 
-
-	function playVid() { 
-  	vid.play(); 
-	} 
-	function pauseVid() { 
-  	vid.pause();
-	}
-	</script> 
+ 
 
 
      
